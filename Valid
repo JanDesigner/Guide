@@ -1,0 +1,25 @@
+	@InitBinder
+	public void InitBinder(WebDataBinder binder) {
+		binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+	}
+ 
+ @Valid the object
+ 
+<div class = "dialog dialog-danger text-danger	pt-2" th:if="${emsg}" th:text="${emsg}"></div>
+
+			bindingResult.rejectValue("password", "user.error", "Error Password Too short");
+			model.addObject("emsg", "Password not Match");
+
+
+<div class = "dialog dialog-danger text-danger " th:if="${error1}" th:text="${error1}"></div>
+
+			bindingResult.rejectValue("email", "user.error");
+			model.addObject("error1" , "Email already Exist");
+      
+<div class = "dialog dialog-danger text-danger pb-2" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+
+			@Size( min=6 , message = "min of 6 character")
+        
+    
+    
+  
